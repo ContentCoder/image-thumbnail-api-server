@@ -96,7 +96,7 @@ function getThumbnail(req, res) {
 			res.end(data.Body);
 
 			var item = {};
-			item.TableName             = config.TABLE;
+			item.TableName             = config.THUMBTABLE;
 			item.Item                  = {};
 			item.Item.User             = {S: req.accessKey.User.S};
 			item.Item.Time             = {N: new Date().getTime().toString()};
@@ -127,7 +127,7 @@ function responseJSON(res, statusCode, msg) {
 
 function authenticate(req, callback) {
   var item = {};
-  item.TableName = 'AccessKeys';
+  item.TableName = config.AUTHTABLE;
   item.Key       = {};
   item.Key.ID    = {S: req.parsedUrl.query.apikey};
   dynamodb.getItem(item, function(err, accessKey) {
