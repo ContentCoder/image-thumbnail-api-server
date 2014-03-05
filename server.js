@@ -22,6 +22,10 @@ var util    = require('util'),
 var config  = require(path.join(__dirname, 'config.json'));
 util.log(JSON.stringify(config, null, 2));
 
+// aws init
+aws.config.loadFromPath(path.join(__dirname, 'awsconfig.json'));
+var dynamodb = new aws.DynamoDB();
+
 // launch server 
 var port = process.env.PORT || config.PORT;
 http.createServer(function(req, res) {
