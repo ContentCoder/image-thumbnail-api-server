@@ -16,7 +16,7 @@ var util    = require('util'),
     url     = require('url'),
     crypto  = require('crypto'),
 		aws     = require('aws-sdk'),
-		uit     = require(path.join(__dirname, 'url-thumbnail.js'));
+		uit     = require(path.join(__dirname, 'modules/url-image-thumbnail/url-thumbnail.js'));
 
 // load configuration
 var config  = require(path.join(__dirname, 'config.json'));
@@ -77,7 +77,6 @@ function getThumbnail(req, res) {
 			return;
 		}
 
-		util.log('authenticate succeed.');
 		var options = {};
 		options.width   = req.parsedUrl.query.width;
     options.height  = req.parsedUrl.query.height;
