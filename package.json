@@ -1,0 +1,26 @@
+{
+  "name": "image-thumbnail-api-server",
+  "version": "0.0.1",
+  "description": "image thumbnail API server",
+  "main": "server.js",
+  "dependencies": {
+    "aws-sdk": "~2.0.0-rc10",
+    "node-uuid": "~1.4.1",
+    "request": "~2.34.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ContentCoder/image-thumbnail-api-server.git"
+  },
+  "author": "Content Coder <codingforcontent@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ContentCoder/image-thumbnail-api-server/issues"
+  },
+  "homepage": "https://github.com/ContentCoder/image-thumbnail-api-server"
+}
