@@ -70,7 +70,6 @@ util.log(util.format('Image thumbnail API server running at %d port...', port));
  */
 function getThumbnail(req, res) {
   if (!req.parsedUrl.query.apikey 	|| 
-			!req.parsedUrl.query.expires 	|| 
 			!req.parsedUrl.query.url 			|| 
 			(!req.parsedUrl.query.width && !req.parsedUrl.query.height)) {
     responseJSON(res, 400, {message: '400 Bad Request'});
