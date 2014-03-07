@@ -2,4 +2,4 @@ config.json
 awsconfig.json
 modules/
 node_modules/
-
+_test/
