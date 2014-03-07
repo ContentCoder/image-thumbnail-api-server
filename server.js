@@ -69,7 +69,10 @@ util.log(util.format('Image thumbnail API server running at %d port...', port));
  *		Body: thumbnail file
  */
 function getThumbnail(req, res) {
-  if (!req.parsedUrl.query.url || (!req.parsedUrl.query.width && !req.parsedUrl.query.height)) {
+  if (!req.parsedUrl.query.apikey 	|| 
+			!req.parsedUrl.query.expires 	|| 
+			!req.parsedUrl.query.url 			|| 
+			(!req.parsedUrl.query.width && !req.parsedUrl.query.height)) {
     responseJSON(res, 400, {message: '400 Bad Request'});
     return;
   }
@@ -139,6 +142,10 @@ function authenticate(req, callback) {
       callback(false);
       return;
     }
+		if (!accessKey.Item) {
+			callback(false);
+			return;
+		}
 
     req.accessKey = accessKey.Item;
     if (!config.AUTHENTICATION) {
